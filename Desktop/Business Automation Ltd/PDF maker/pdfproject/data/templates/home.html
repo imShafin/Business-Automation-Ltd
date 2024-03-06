@@ -1,0 +1,36 @@
+{% load static %}
+<head> <script src="{% static 'data/js/ajax.js' %}"></script> </head>
+    <form id="contactForm">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
+    <table id="contactTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Mobile</th>
+                <th>University</th>
+                <th>PDF</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contacts in contacts %}
+            <tr>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.address }}</td>
+                <td>{{ contact.mobile }}</td>
+                <td>{{ contact.university }}</td>
+                <td><button class="download-btn" data-contact-id="{{ contact.id }}">Download PDF</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+       
+
+

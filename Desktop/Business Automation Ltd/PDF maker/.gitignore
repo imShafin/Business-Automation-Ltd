@@ -1,0 +1,5 @@
+venv
+pdfproject/data/__pycache__
+pdfproject/data/migrations
+pdfproject/pdfproject/__pycache__
+pdfproject/db.sqlite3
